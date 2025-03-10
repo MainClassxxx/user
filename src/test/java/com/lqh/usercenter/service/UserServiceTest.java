@@ -34,28 +34,29 @@ public class UserServiceTest {
         String userAccount = "kaipao";
         String userPassword = "";
         String checkPassword = "123456";
-        long userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        String planetCode = "1";
+        long userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         userAccount="kai";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         userAccount = "kaipao";
         userPassword = "123456";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         userAccount = "kai pao";
         userPassword = "12345678";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         checkPassword = "123456789";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         userAccount = "dogKaipao";
         checkPassword = "12345678";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertEquals(-1,userRegister);
         userAccount = "kaipao";
-        userRegister = userService.userRegister(userAccount, userPassword, checkPassword);
+        userRegister = userService.userRegister(userAccount, userPassword, checkPassword,planetCode);
         Assertions.assertTrue(userRegister > 0);
     }
 }
